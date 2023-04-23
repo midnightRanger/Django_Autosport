@@ -17,6 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from racing.views import index
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('racing/', index), #localhost:8000/racing/
 ]

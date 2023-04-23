@@ -1,0 +1,3 @@
+python manage.py startapp racing - to create new application
+django-admin startproject autosport  - create django project
+python manage.py runserver - run server

@@ -22,5 +22,6 @@ from racing.views import *
 urlpatterns = [
     path('racing/', include('racing.urls')),
     path('admin/', admin.site.urls),
-
 ]
+
+handler404 = pageNotFound

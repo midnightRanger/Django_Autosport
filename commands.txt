@@ -1,3 +1,7 @@
 python manage.py startapp racing - to create new application
 django-admin startproject autosport  - create django project
 python manage.py runserver - run server
+python manage.py makemigrations - make migration
+python manage.py sqlmigrate racing 0001 - show sql query of migration
+
+python manage.py migrate

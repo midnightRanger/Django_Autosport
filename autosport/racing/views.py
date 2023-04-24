@@ -15,6 +15,26 @@ def competitions(request, competition_id):
 
     return HttpResponse(f"Страница Competition: {competition_id}")
 
+def get_car(request, id):
+    car = Car.objects.filter(id = id)
+
+    if (not car):
+        return HttpResponse("Car not found")
+    return HttpResponse(car)
+
+def car_index(request):
+
+    car_value = ""
+
+    cars = Car.objects.all()
+    if not cars:
+        return HttpResponse("There are no cars in DB:(")
+
+    for car in cars:
+        car_value += f"{car.pk} - {car.name} \n"
+    return HttpResponse(car_value)
+
+
 def create_car(request):
     if not request.GET:
         return Http404()
@@ -27,6 +47,11 @@ def create_car(request):
 
     car = Car(name = name, height = height, mass = mass, model = model, mark = mark)
     car.save()
+
+    ##OR
+    ##car = Car.objects.create(name = name, height = height, mass = mass, model = model, mark = mark)
+
+    return HttpResponse(f"Car with id {car.id} was successfully added")
 
 
 

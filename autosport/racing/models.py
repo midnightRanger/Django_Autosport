@@ -19,3 +19,6 @@ class Car(models.Model):
         default = "INLINE",
         choices= ENGINE_TYPE_CHOICES
     )
+
+    def __str__(self):
+        return self.name

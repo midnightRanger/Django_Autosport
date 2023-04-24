@@ -9,12 +9,12 @@ def competitions(request, competition_id):
     if(request.GET):
         print(request.GET)
     if int(competition_id) > 1000:
-        return redirect('/racing/')
+        return redirect('home')
 
     return HttpResponse(f"Страница Competition: {competition_id}")
 
 def archive(request, year):
-    if int(year) > 2030:
+    if int(year) > 2023:
         raise Http404()
 
     return HttpResponse(f"Year: {year}")
